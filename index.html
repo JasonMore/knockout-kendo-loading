@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script type="text/javascript" data-main="scripts/init.js" src="scripts/require.js"></script>
+		<script>
+			require.config({
+                shim: {
+					'knockout-2.2.1' : {
+						deps: ['knockout-2.2.1'],
+						exports: 'knockout'
+					}
+				}
+            })
+		</script>
+    </head>
+    <body>
+        <p>First name: <input data-bind="value: firstName" /></p>
+        <p>First name capitalized: <strong data-bind="text: firstNameCaps"></strong></p>
+		
+		<input type="checkbox" data-bind="checked: isOpen" /> Open<br/>
+		<div data-bind="kendoWindow: { isOpen: isOpen, visible: false }">
+			Window Content
+		</div>
+		
+    </body>
+</html>
